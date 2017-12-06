@@ -1,0 +1,5 @@
+<div class="form-check">
+  <label class="form-check-label" [style.text-decoration]="item.completed?'line-through':''">
+    <input class="form-check-input" type="checkbox" value="" (click)="toggleStatus()"> {{item.text}}
+  </label>
+</div>

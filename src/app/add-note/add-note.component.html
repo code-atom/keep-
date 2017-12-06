@@ -1,0 +1,42 @@
+<section id="add-note" class="mt-4 ">
+  <div class="container">
+    <div class="row mx-4">
+      <div class="card col-md-12">
+        <div class="card-body">
+          <h4 class="card-title">Keep Note</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Add new keep note</h6>
+          <form #f="ngForm" [formGroup]="form" (submit)="f.valid && addNote(form.value)">
+            <div class="form-group clearfix">
+              <div class=" col-md-10 pull-left">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title" formControlName="title" required>
+              </div>
+              <div class=" col-md-2 pull-right">
+                <button type="button" class="btn btn-success col-md-12" (click)="addItems()">Add</button>
+              </div>
+            </div>
+            <div class="form-group mt4">
+              <ng-container formArrayName="items">
+                <ng-container *ngFor="let item of items.controls; let i=index" [formGroupName]="i">
+                  <div class="form-group col-md-4">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for..." formControlName="text" required>
+                      <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button" (click)="removeItem(i)">
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

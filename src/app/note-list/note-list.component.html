@@ -1,0 +1,29 @@
+<section id="create-note" class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="card center">
+        <div class="card-body">
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <div class="input-group-btn">
+              <a routerLink="/add" class="btn btn-primary" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="note-lists" class="mt-4">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let note of notes">
+        <div class="col-4">
+          <app-note [note]="note"></app-note>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

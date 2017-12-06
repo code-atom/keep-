@@ -1,0 +1,15 @@
+<div [class]="style" class=" rounded-0">
+  <div class="card-block  text-center">
+    <h4 class="card-title">{{note.title}}
+      <i class="fa fa-check-circle text-success" aria-hidden="true" *ngIf="note.completed"></i>
+    </h4>
+    <div class="progress  rounded-0">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="completionRate" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let item of note.items">
+      <app-note-item [item]="item" (status-update)="toggleStatus()"></app-note-item>
+    </li>
+  </ul>
+</div>

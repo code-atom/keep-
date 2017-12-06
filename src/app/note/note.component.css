@@ -1,0 +1,24 @@
+.card-outline-primary {
+  background-color: transparent;
+  border-color: #0275d8;
+}
+.card-outline-secondary {
+  background-color: transparent;
+  border-color: #ccc;
+}
+.card-outline-success {
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+.card-outline-info {
+  background-color: transparent;
+  border-color: #5bc0de;
+}
+.card-outline-warning {
+  background-color: transparent;
+  border-color: #f0ad4e;
+}
+.card-outline-danger {
+  background-color: transparent;
+  border-color: #d9534f;
+}
